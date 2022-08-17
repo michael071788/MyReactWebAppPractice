@@ -11,43 +11,77 @@ main{
   padding: 20px;
 }
 .sidebar{
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   height: 100vh;
-  width: 200px;
+  width: 350px;
   transition: all 0.5s;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.08);
 }
 .top_section{
   display: flex;
-  align-items:center;
-  padding:20px 15px;
+  flex-direction: row;
+  justify-content:space-between;
+  padding: 20px 20px 20px;
 }
-.logo{
-  font-size: 30px;
+.app_name{
+  font-size: 20px;
+  color: #21232A;
+  font-family: "Work Sans";
+  font-size: 20px;
 }
 .bars{
   display: flex;
+  justify-content: flex-end;
   font-size: 25px;
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
+
+.logo{
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
 .link{
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
   color: #fff;
   padding: 10px 15px;
   gap: 15px;
   transition: all 0.5s;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .link:hover{
-  background:lightskyblue;
+  background:rgba(6, 85, 255, 0.05);
   color: #000;
   transition: all 0.5s;
 }
+
 .active{
-  background: lightskyblue;
+  background: rgba(6, 85, 255, 0.05);
   color: #000;
 }
-.icon, .link_text{
+
+.icon{
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+.link_text{
   font-size: 20px;
+  color: #21232A;
+  font-family: "Work Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  justify-content:center;
+  align-items: center;
+  padding-left: 20px;
 }
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-    FaTh,
+    FaHome,
     FaBars,
     FaUserAlt,
     FaRegChartBar,
@@ -14,52 +14,60 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
+
+    const iconBasedProps = {
+        color: "#0655FF",
+        width: "20px",
+        height: "20px",
+    }
+
     const menuItem=[
         {
             path:"/",
-            name:"Dashboard",
-            icon:<FaTh/>
+            name:"Home",
+            icon:<FaHome {...iconBasedProps}/>
         },
         {
             path:"/about",
             name:"About",
-            icon:<FaUserAlt/>
+            icon:<FaUserAlt {...iconBasedProps}/>
         },
         {
             path:"/analytics",
             name:"Analytics",
-            icon:<FaRegChartBar/>
+            icon:<FaRegChartBar {...iconBasedProps}/>
         },
         {
             path:"/comment",
             name:"Comment",
-            icon:<FaCommentAlt/>
+            icon:<FaCommentAlt {...iconBasedProps}/>
         },
         {
             path:"/product",
             name:"Product",
-            icon:<FaShoppingBag/>
+            icon:<FaShoppingBag {...iconBasedProps}/>
         },
         {
             path:"/productList",
             name:"Product List",
-            icon:<FaThList/>
+            icon:<FaThList {...iconBasedProps}/>
         }
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
+           <div style={{width: isOpen ? "350px" : "70px"}} className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
-                       <FaBars onClick={toggle}/>
-                   </div>
+                    <div style={{display: isOpen ? "block" : "none"}} className="app_name">My App</div>
+                    <div className="bars">
+                       <FaBars onClick={toggle} color="#0655FF"/>
+                   </div> 
                </div>
                {
                    menuItem.map((item, index)=>(
                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                           <div className="icon">{item.icon}</div>
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                        <div className="icon">{item.icon}</div>
+                        <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div> 
+                          
                        </NavLink>
                    ))
                }
