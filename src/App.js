@@ -1,15 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Button } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <Button variant="primary">Primary</Button>
-      <Button variant="secondary">Secondary</Button>{" "}
-      <Button variant="success">Success</Button>{" "}
-      <Button variant="warning">Warning</Button>{" "}
-    </div>
+    <Container fluid>
+      <Row className="vh-100">
+        <Col xs={2} style={{ backgroundColor: "red" }}>
+          11111asddddddddddddddddddddddddddddddddddddasdasd3333333333333
+        </Col>
+        <Col style={{ backgroundColor: "green" }}>2222</Col>
+      </Row>
+    </Container>
   );
 }
 
