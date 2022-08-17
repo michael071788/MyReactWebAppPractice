@@ -1,17 +1,29 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/Dashboard.jsx";
+import About from "./pages/About.jsx";
+import Analytics from "./pages/Analytics.jsx";
+import Comment from "./pages/Comment.jsx";
+import Product from "./pages/Product.jsx";
+import ProductList from "./pages/ProductList.jsx";
 
 function App() {
   return (
-    <Container fluid>
-      <Row className="vh-100">
-        <Col xs={2} style={{ backgroundColor: "red" }}>
-          11111asddddddddddddddddddddddddddddddddddddasdasd3333333333333
-        </Col>
-        <Col style={{ backgroundColor: "green" }}>2222</Col>
-      </Row>
-    </Container>
+    <BrowserRouter>
+      <Sidebar>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/comment" element={<Comment />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/productList" element={<ProductList />} />
+        </Routes>
+      </Sidebar>
+    </BrowserRouter>
   );
 }
 
