@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import LayoutAdmin from "./components/LayoutAdmin";
 import HomePage from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Analytics from "./pages/Analytics.jsx";
@@ -12,7 +12,7 @@ import ProductList from "./pages/ProductList.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <Sidebar>
+      <LayoutAdmin>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/homepage" element={<HomePage />} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/productList" element={<ProductList />} />
         </Routes>
-      </Sidebar>
+      </LayoutAdmin>
     </BrowserRouter>
   );
 }
