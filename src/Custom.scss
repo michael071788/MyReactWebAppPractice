@@ -8,7 +8,18 @@ $sidebar-collapsed-width: 100px ;
 @import '~react-pro-sidebar/dist/scss/styles.scss';
 
 
-
 .sidebar{
     box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.08);
   }
+
+.badge {
+padding: 3px 6px;
+font-size: 9px;
+letter-spacing: 1px;
+border-radius: 15px;
+&.blue {
+    color: #ffffff;
+    background: #0655FF;
+    }
+}
+  

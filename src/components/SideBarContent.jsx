@@ -47,7 +47,6 @@ const SideBarContent = ({ image, collapsed, rtl, toggled, handleToggleSidebar })
                             letterSpacing: "1px", cursor: "pointer",
                             fontWeight: 750,
                             fontFamily: "sans-serif",
-                            fontStyle: "",
                             ..._menuItemText }}>MY WEB APP</div>
                     </div>
                 </SidebarHeader>
