@@ -1,23 +1,62 @@
-import React, { useEffect, useState } from "react";
+import "./../styles/Custom.scss"
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import {
   ProSidebar,
   Menu,
   MenuItem,
-  SubMenu,
   SidebarHeader,
   SidebarFooter,
   SidebarContent,
 } from "react-pro-sidebar";
+
 import {
-  
-  FaGem,
-  FaList,
-  
-  FaRegLaughWink,
-  FaHeart,
-  FaBars,
   FaHome,
+  FaUserAlt,
+  FaRegChartBar,
+  FaCommentAlt,
+  FaShoppingBag,
+  FaThList
 } from "react-icons/fa";
+
+const iconBasedProps = {
+    color: "#0655FF",
+    width: "20px",
+    height: "20px",
+}
+
+const menuItem=[
+    {
+        path:"/",
+        name:"Home",
+        icon:<FaHome {...iconBasedProps}/>
+    },
+    {
+        path:"/about",
+        name:"About",
+        icon:<FaUserAlt {...iconBasedProps}/>
+    },
+    {
+        path:"/analytics",
+        name:"Analytics",
+        icon:<FaRegChartBar {...iconBasedProps}/>
+    },
+    {
+        path:"/comment",
+        name:"Comment",
+        icon:<FaCommentAlt {...iconBasedProps}/>
+    },
+    {
+        path:"/product",
+        name:"Product",
+        icon:<FaShoppingBag {...iconBasedProps}/>
+    },
+    {
+        path:"/productList",
+        name:"Product List",
+        icon:<FaThList {...iconBasedProps}/>
+    }
+]
 
 
 
@@ -25,7 +64,6 @@ const SideBarContent = ({ image, collapsed, rtl, toggled, handleToggleSidebar })
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
-    const _iconColor = "#0655FF";
     const _menuItemText = {
         color: "#21232A",
 
@@ -51,11 +89,16 @@ const SideBarContent = ({ image, collapsed, rtl, toggled, handleToggleSidebar })
                     </div>
                 </SidebarHeader>
                 <SidebarContent>
-                <Menu iconShape="circle">
-                    <MenuItem className="myLink" icon={<FaHome color={_iconColor} />}><div style={_menuItemText}>Home</div> </MenuItem>
-                    <MenuItem className="myLink" icon={<FaGem  color={_iconColor} />} suffix={<span className="badge blue">4</span>}><div style={_menuItemText}>Message</div></MenuItem>
-                </Menu>
-                
+
+                {
+                   menuItem.map((item, index)=>(
+                    <Menu iconShape="circle">
+                        <MenuItem className="myLink" icon={item.icon}><div style={_menuItemText}>{item.name} <Link to={item.path} /></div></MenuItem>
+                    </Menu>
+                   ))
+               }
+
+
                  {/* <Menu iconShape="circle">
                     <SubMenu suffix={<span className="red">3</span>}title={"With Suffix"}icon={<FaRegLaughWink  color={_iconColor}  />}>
                         <MenuItem>Sub Menu 1</MenuItem>

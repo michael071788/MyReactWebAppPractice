@@ -8,8 +8,8 @@ const LayoutAdmin = ({children}) => {
            <SideBarContent />
 
             <div style={{ display: "flex", width: "100%", backgroundColor: "transparent"}}>
-            AAAAAAAAAAAAAAA
-            
+         
+             <div>{children}</div>
             </div>
         </div>
     );

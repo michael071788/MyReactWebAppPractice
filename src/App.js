@@ -1,5 +1,4 @@
 import "./App.css";
-import "./Custom.scss";
 import "react-pro-sidebar/dist/css/styles.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LayoutAdmin from "./components/LayoutAdmin";
