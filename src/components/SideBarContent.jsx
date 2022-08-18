@@ -9,82 +9,79 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 import {
-  FaTachometerAlt,
+  
   FaGem,
   FaList,
-  FaGithub,
+  
   FaRegLaughWink,
   FaHeart,
   FaBars,
+  FaHome,
 } from "react-icons/fa";
+
+
 
 const SideBarContent = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
+    const _iconColor = "#0655FF";
+    const _menuItemText = {
+        color: "#21232A",
+
+    }
 
     return (
-       
-        <div>
+        <div className="sidebar">
             <ProSidebar image={false} rtl={rtl} collapsed={isOpen} breakPoint="md">
                 <SidebarHeader>
-                    <div style={{
+                <div style={{
                         display: "flex",
-                        padding: "24px",
+                        padding: "25px 20px 25px 35px",
                         flexDirection: "row",
                         alignItems: "center",
-                        justifyContent: "center",
-                        
+                        justifyContent: "flex-start",
                         }}
                         onClick={toggle}>
-                            <div style={{display: isOpen ? "none": "block",   letterSpacing: "1px", cursor: "pointer" }} >MY APP</div>
-                            <div style={{display: isOpen ? "block": "none", cursor: "pointer"  }} > <FaBars onClick={toggle} color="#0655FF" /></div>
+                            <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                            letterSpacing: "1px", cursor: "pointer",
+                            fontWeight: 750,
+                            fontFamily: "sans-serif",
+                            fontStyle: "",
+                            ..._menuItemText }}>MY WEB APP</div>
                     </div>
                 </SidebarHeader>
-
                 <SidebarContent>
                 <Menu iconShape="circle">
-                <MenuItem
-                icon={<FaTachometerAlt />}
-                suffix={<span className="badge red">new</span>}
-                >
-                Dashboard
-                </MenuItem>
-                <MenuItem icon={<FaGem />}> components</MenuItem>
+                    <MenuItem className="myLink" icon={<FaHome color={_iconColor} />}><div style={_menuItemText}>Home</div> </MenuItem>
+                    <MenuItem className="myLink" icon={<FaGem  color={_iconColor} />} suffix={<span className="badge blue">4</span>}><div style={_menuItemText}>Message</div></MenuItem>
                 </Menu>
-                <Menu iconShape="circle">
-                <SubMenu
-                suffix={<span className="badge yellow">3</span>}
-                title={"With Suffix"}
-                icon={<FaRegLaughWink />}
-                >
-                <MenuItem>Sub Menu 1</MenuItem>
-                <MenuItem>Sub Menu 2</MenuItem>
-                <MenuItem>Sub Menu 3</MenuItem>
-                </SubMenu>
-                <SubMenu
-                prefix={<span className="badge gray">3</span>}
-                title={"With Prefix"}
-                icon={<FaHeart />}
-                >
-                <MenuItem>Sub Menu 1</MenuItem>
-                <MenuItem>Sub Menu 2</MenuItem>
-                <MenuItem>Sub Menu 3</MenuItem>
-                </SubMenu>
-                <SubMenu title={"Multi Level"} icon={<FaList />}>
-                <MenuItem>Sub Menu 1</MenuItem>
-                <MenuItem>Sub Menu2 </MenuItem>
-                <SubMenu title={"Sub Menu 3"}>
-                <MenuItem>Sub Menu 3.1 </MenuItem>
-                <MenuItem>Sub Menu 3.2 </MenuItem>
-                <SubMenu title={"Sub Menu 3.3"}>
-                <MenuItem>Sub Menu 3.3.1</MenuItem>
-                <MenuItem>Sub Menu 3.3.2</MenuItem>
-                <MenuItem>Sub Menu 3.3.3</MenuItem>
-                </SubMenu>
-                </SubMenu>
-                </SubMenu>
-                </Menu>
+                
+                 {/* <Menu iconShape="circle">
+                    <SubMenu suffix={<span className="red">3</span>}title={"With Suffix"}icon={<FaRegLaughWink  color={_iconColor}  />}>
+                        <MenuItem>Sub Menu 1</MenuItem>
+                        <MenuItem>Sub Menu 2</MenuItem>
+                        <MenuItem>Sub Menu 3</MenuItem>
+                    </SubMenu>
+                    <SubMenu prefix={<span className="badge red">3</span>} title={"With Prefix"} icon={<FaHeart  color={_iconColor}  />} >
+                        <MenuItem>Sub Menu 1</MenuItem>
+                        <MenuItem>Sub Menu 2</MenuItem>
+                        <MenuItem>Sub Menu 3</MenuItem>
+                    </SubMenu>
+                    <SubMenu title={"Multi Level"} icon={<FaList  color={_iconColor}  />}>
+                        <MenuItem>Sub Menu 1</MenuItem>
+                        <MenuItem>Sub Menu2 </MenuItem>
+                        <SubMenu title={"Sub Menu 3"}>
+                            <MenuItem>Sub Menu 3.1 </MenuItem>
+                            <MenuItem>Sub Menu 3.2 </MenuItem>
+                            <SubMenu title={"Sub Menu 3.3"}>
+                                <MenuItem>Sub Menu 3.3.1</MenuItem>
+                                <MenuItem>Sub Menu 3.3.2</MenuItem>
+                                <MenuItem>Sub Menu 3.3.3</MenuItem>
+                            </SubMenu>
+                        </SubMenu>
+                    </SubMenu>
+                </Menu>  */}
                 </SidebarContent>
 
                 <SidebarFooter style={{ textAlign: "center" }}>
