@@ -1,4 +1,6 @@
-import "./../styles/Custom.scss"
+import "./../styles/Custom.scss";
+import "@fontsource/work-sans";
+import "@fontsource/montserrat";
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import {
@@ -66,12 +68,13 @@ const SideBarContent = ({ image, collapsed, rtl, toggled, handleToggleSidebar })
 
     const _menuItemText = {
         color: "#21232A",
-
+        fontfamily: "Work Sans",
+    
     }
 
     return (
         <div className="sidebar">
-            <ProSidebar image={false} rtl={rtl} collapsed={isOpen} breakPoint="md">
+            <ProSidebar image={false} rtl={rtl} collapsed={isOpen} breakPoint="xs">
                 <SidebarHeader>
                 <div style={{
                         display: "flex",
@@ -84,19 +87,19 @@ const SideBarContent = ({ image, collapsed, rtl, toggled, handleToggleSidebar })
                             <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                             letterSpacing: "1px", cursor: "pointer",
                             fontWeight: 750,
-                            fontFamily: "sans-serif",
+                            fontFamily: "Montserrat",
                             ..._menuItemText }}>MY WEB APP</div>
                     </div>
                 </SidebarHeader>
-                <SidebarContent>
+                <SidebarContent style={{paddingTop: "5px"}}>
 
                 {
                    menuItem.map((item, index)=>(
-                    <Menu iconShape="circle">
-                        <MenuItem className="myLink" icon={item.icon}><div style={_menuItemText}>{item.name} <Link to={item.path} /></div></MenuItem>
+                    <Menu style={{padding: "0px"}} iconShape="circle">
+                        <MenuItem className="myLink" icon={item.icon}><div style={{color: "#21232A",fontFamily: "Work Sans"}}>{item.name} <Link to={item.path} /></div></MenuItem>
                     </Menu>
                    ))
-               }
+                }
 
 
                  {/* <Menu iconShape="circle">
